@@ -8,7 +8,7 @@ export const TechnicalLayout = ({children}) => {
             
             <Navbar/>
 
-            <Box component='main' sx={{flexGrow: 1, p: 3}}>
+            <Box component='main' sx={{flexGrow: 1}}>
                 {children}
             </Box>
         </Box>
