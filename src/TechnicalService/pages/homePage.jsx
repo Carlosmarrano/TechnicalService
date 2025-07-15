@@ -17,7 +17,7 @@ export const HomePage = () => {
 
                 <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "90%", md: "100%" } }}>
                     <Typography variant="h1" sx={{ fontSize: { xs: 40, md: 60 }, fontWeight: 500 }}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        En Petu Service, le damos solución a tus problemas en casa
                     </Typography>
                     <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, marginTop: { lg: 18, md: 15, xs: 8 }, marginBottom: { xs: 8 } }}>
                         <Button variant="contained" sx={{ bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>
