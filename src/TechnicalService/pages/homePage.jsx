@@ -13,26 +13,26 @@ export const HomePage = () => {
 
     return (
         <TechnicalLayout>
-            <Grid container sx={{ marginTop: 20, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: { xs: "center", md: "flex-start" }, gap: { xs: 6, md: 12, lg: 16 }, marginRight: { xs: 10 } }}>
+            <Grid container sx={{ marginTop: 20, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: { xs: "center", md: "flex-start" }, gap: { xs: 6, md: 12, lg: 16 }, marginRight: 9.5}}>
 
-                <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "90%", md: "100%" } }}>
+                <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "68%", md: "100%" }}}>
                     <Typography variant="h1" sx={{ fontSize: { xs: 40, md: 60 }, fontWeight: 500 }}>
                         En Petu Service, le damos solución a tus problemas en casa
                     </Typography>
-                    <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, marginTop: { lg: 18, md: 15, xs: 8 }, marginBottom: { xs: 8 } }}>
+                    <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, marginTop: { lg: 18, md: 15, xs: 8 }, marginBottom: {xs: 8} }}>
                         <Button variant="contained" sx={{ bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>
                             Más info
                         </Button>
                     </Box>
                 </Grid>
 
-                <Grid sx={{ width: "100%", maxWidth: 400, height: "auto", marginTop: { xs: 4, md: 0 }, marginLeft: { xs: 0, md: 4 } }}>
-                    <Box component="img" src={headerImage} alt="headerImage" sx={{ width: "100%", height: "auto", maskImage: 'linear-gradient(black 80%, transparent)'}}>
+                <Grid sx={{ width: "100%", maxWidth: 400, height: "auto", }}>
+                    <Box component="img" src={headerImage} alt="headerImage" sx={{ width: {xs: "68%", md: "100%"}, height: "auto", maskImage: 'linear-gradient(black 80%, transparent)', marginLeft: {xs: 6, md: 0}  }}>
                     </Box>
                 </Grid>
             </Grid>
 
-            <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", flexDirection: { xs: "column", md: "row" }, gap: { xs: 3, md: 12, lg: 16 }, marginRight: { xs: 12 } }}>
+            <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", flexDirection: { xs: "column", md: "row" }, gap: { xs: 3, md: 12, lg: 16 }, marginRight: { xs: 10, md: 0 } }}>
 
                 <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
                     <Box>
@@ -57,7 +57,7 @@ export const HomePage = () => {
 
             <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "column", gap: 8, marginRight: 10 }}>
                 <Box>
-                    <Typography variant="h2" sx={{textAlign: "center", fontSize: {xs: 40, sm: 50, lg: 60 }}}>
+                    <Typography variant="h2" sx={{ textAlign: "center", fontSize: { xs: 40, sm: 50, lg: 60 } }}>
                         Nuestros Servicios
                     </Typography>
                 </Box>
@@ -209,7 +209,7 @@ export const HomePage = () => {
 
                     <Divider sx={{ borderColor: "#ccc", marginBottom: 4 }} />
 
-                    <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" }, justifyContent: "space-between", alignItems: { xs: "flex-start", lg: "center" }, gap: 3, }}>
+                    <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" }, justifyContent: "space-between", alignItems: { xs: "flex-start", lg: "center" }, gap: 3, marginBottom: 4 }}>
                         <Typography sx={{ color: "black" }}>© {new Date().getFullYear()} Todos los Derechos reservados</Typography>
 
                         <Stack direction="row" spacing={3} sx={{ flexWrap: "wrap", justifyContent: { xs: "flex-start", lg: "flex-end" } }} >
