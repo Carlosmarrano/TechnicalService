@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, Container, Divider, Grid, Link, Stack, TextField, Typography } from "@mui/material";
+import { Box, Card, CardContent, Container, Divider, Grid, Link, Stack, TextField, Typography } from "@mui/material";
 import { TechnicalLayout } from "../layout/TechnicalLayout";
 import headerImage from "../../../public/header.png";
 import ServiceImage from "../../../public/logo.png";
@@ -9,26 +9,27 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import XIcon from '@mui/icons-material/X';
 import { AnimatedNumber } from "../components/incrementNumbers";
+import { InfoButton } from "../components/Buttons/infoButton";
+import { ReviewsButton } from "../components/Buttons/ReviewsButton";
+import { AllServiceButton } from "../components/Buttons/AllServiceButton";
+import { AboutUsButton } from "../components/Buttons/AboutUsButton";
+import { FormButtom } from "../components/Buttons/FormButton";
 
 export const HomePage = () => {
 
     return (
         <TechnicalLayout>
-            <Grid container sx={{ marginTop: 20, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: { xs: "center", md: "flex-start" }, gap: { xs: 6, md: 12, lg: 16 }, marginRight: 9.5}}>
+            <Grid container sx={{ marginTop: 20, display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: { xs: "center", md: "flex-start" }, gap: { xs: 6, md: 12, lg: 16 }, marginRight: 9.5 }}>
 
-                <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "68%", md: "100%" }}}>
+                <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "68%", md: "100%" } }}>
                     <Typography variant="h1" sx={{ fontSize: { xs: 40, md: 60 }, fontWeight: 500 }}>
                         En Petu Service, le damos solución a tus problemas en casa
                     </Typography>
-                    <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-start" }, marginTop: { lg: 18, md: 15, xs: 8 }, marginBottom: {xs: 8} }}>
-                        <Button variant="contained" sx={{ bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>
-                            Más info
-                        </Button>
-                    </Box>
+                    <InfoButton />
                 </Grid>
 
                 <Grid sx={{ width: "100%", maxWidth: 400, height: "auto", }}>
-                    <Box component="img" src={headerImage} alt="headerImage" sx={{ width: {xs: "68%", md: "100%"}, height: "auto", maskImage: 'linear-gradient(black 80%, transparent)', marginLeft: {xs: 6, md: 0}  }}>
+                    <Box component="img" src={headerImage} alt="headerImage" sx={{ width: { xs: "68%", md: "100%" }, height: "auto", maskImage: 'linear-gradient(black 80%, transparent)', marginLeft: { xs: 6, md: 0 } }}>
                     </Box>
                 </Grid>
             </Grid>
@@ -37,23 +38,18 @@ export const HomePage = () => {
 
                 <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
                     <Box>
-                        <AnimatedNumber targetNumber={50} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 }}} />
+                        <AnimatedNumber targetNumber={50} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 } }} />
                         <Typography sx={{ fontWeight: 500, fontSize: { xs: 19, md: 25 } }}>Clientes satisfechos</Typography>
                     </Box>
                 </Grid>
 
                 <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
                     <Box>
-                        <AnimatedNumber targetNumber={189} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 }}} />
+                        <AnimatedNumber targetNumber={189} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 } }} />
                         <Typography sx={{ fontWeight: 500, fontSize: { xs: 19, md: 25 } }}>Electrodomésticos reparados</Typography>
                     </Box>
                 </Grid>
-
-                <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
-                    <Box>
-                        <Button variant="contained" sx={{ display: "flex", bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>Ver reseñas</Button>
-                    </Box>
-                </Grid>
+                <ReviewsButton />
             </Grid>
 
             <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "column", gap: 8, marginRight: 10 }}>
@@ -89,11 +85,7 @@ export const HomePage = () => {
                         <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earum.</Typography>
                     </Box>
                 </Box>
-                <Box sx={{ textAlign: "center", mt: 4 }}>
-                    <Button variant="contained" size="large" sx={{ display: "flex", bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>
-                        Conoce todos nuestros servicios
-                    </Button>
-                </Box>
+                <AllServiceButton />
             </Grid>
 
             <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "column", gap: 8, marginRight: 10 }}>
@@ -108,11 +100,7 @@ export const HomePage = () => {
                         <Typography variant="h5">Soporte Técnico</Typography>
                         <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem.</Typography>
                     </Box>
-                    <Box sx={{ textAlign: "center", alignContent: "center" }}>
-                        <Button variant="contained" sx={{ bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>
-                            Sobre Nosotros
-                        </Button>
-                    </Box>
+                    <AboutUsButton />
                 </Box>
             </Grid>
 
@@ -138,9 +126,7 @@ export const HomePage = () => {
                                 <Grid size={{ xs: 12 }}>
                                     <TextField label="Message" multiline rows={5} placeholder="Deja tu mensaje" variant="outlined" fullWidth required />
                                 </Grid>
-                                <Grid size={{ xs: 12 }}>
-                                    <Button fullWidth variant="contained" sx={{ bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 } }}>Enviar</Button>
-                                </Grid>
+                                <FormButtom />
                             </Grid>
                         </form>
                     </CardContent>

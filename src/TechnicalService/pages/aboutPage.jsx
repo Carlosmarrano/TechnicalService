@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material"
 import { TechnicalLayout } from "../layout/TechnicalLayout"
+import { AllServiceButton } from "../components/Buttons/AllServiceButton"
 
 
 export const AboutPage = () => {
@@ -25,11 +26,7 @@ export const AboutPage = () => {
                         <Typography variant="body1">Le recordamos, que nuestra labor es 24/7, bajo cualquier condición climatica.</Typography>
                     </Box>
                 </Box>
-                <Box sx={{ textAlign: "center" }}>
-                    <Button variant="contained" size="large" sx={{ display: "flex", bgcolor: "primary.main", color: "black", padding: { xs: 1, md: 1.5 }, borderRadius: 5, fontSize: { xs: 14, md: 16 }}}>
-                        nuestros servicios
-                    </Button>
-                </Box>
+                <AllServiceButton/> 
             </Grid>
 
         </TechnicalLayout>
