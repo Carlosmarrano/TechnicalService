@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import XIcon from '@mui/icons-material/X';
+import { AnimatedNumber } from "../components/incrementNumbers";
 
 export const HomePage = () => {
 
@@ -36,14 +37,14 @@ export const HomePage = () => {
 
                 <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
                     <Box>
-                        <Typography sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 } }}>+50k</Typography>
+                        <AnimatedNumber targetNumber={50} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 }}} />
                         <Typography sx={{ fontWeight: 500, fontSize: { xs: 19, md: 25 } }}>Clientes satisfechos</Typography>
                     </Box>
                 </Grid>
 
                 <Grid sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", flex: 1 }}>
                     <Box>
-                        <Typography sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 } }}>+189k</Typography>
+                        <AnimatedNumber targetNumber={189} sx={{ fontWeight: 900, fontSize: { xs: 50, md: 80 }}} />
                         <Typography sx={{ fontWeight: 500, fontSize: { xs: 19, md: 25 } }}>Electrodomésticos reparados</Typography>
                     </Box>
                 </Grid>
