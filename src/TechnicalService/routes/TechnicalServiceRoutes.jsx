@@ -3,6 +3,7 @@ import { HomePage } from "../pages/homePage"
 import { ServicesPage } from "../pages/servicePage"
 import { AboutPage } from "../pages/aboutPage"
 import { ContactPage } from "../pages/contactPage"
+import { PageNotFound } from "../pages/404PagenotFound"
 
 
 export const TechnicalServiceRoutes = () => {
@@ -14,7 +15,8 @@ export const TechnicalServiceRoutes = () => {
             <Route path="/contact" element={ <ContactPage/>} />
             {/**404 Page not found */}
             
-            <Route path="/*" element={ <Navigate to="/" /> }/>
+            <Route path="/404PageNotFound" element={ <PageNotFound/>} />
+            <Route path="/*" element={ <Navigate to="/404PageNotFound" /> }/>
         </Routes>
     )
 }
