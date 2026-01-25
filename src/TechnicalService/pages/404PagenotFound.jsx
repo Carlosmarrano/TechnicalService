@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material"
 import NotFoundPage from "../../../public/404.png";
-import { AllServiceButton } from "../components/Buttons/AllServiceButton";
+import { HomeButton } from "../components/Buttons/homeButton";
 
 export const PageNotFound = () => {
     return (
@@ -11,7 +11,7 @@ export const PageNotFound = () => {
 
             <Box component="img" src={NotFoundPage} alt="notFoundPage" sx={{ width: {xs: "50%", sm: "45%" ,md: "38%"}}} >
             </Box>
-            <AllServiceButton />
+            <HomeButton />
         </Grid>
     )
 }                                                                                                                                                                       
