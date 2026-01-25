@@ -15,9 +15,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import logo from "../../../public/logo.png"
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['About', 'Services', 'Contact'];
+const navItems = ['About', 'Service', 'Contact'];
 
 export const Navbar = (props) => {
     const { window } = props;
@@ -26,17 +27,25 @@ export const Navbar = (props) => {
     const handleDrawerToggle = () => {
       setMobileOpen((prevState) => !prevState);
     };
+
+    const handleNavClick = () => {
+      setTimeout(() => {
+        setMobileOpen(false);
+      }, 150)
+    }
   
     const drawer = (
       <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
         <Typography variant="h6" sx={{ my: 2 }}>
+        <Link to="/" onClick={handleNavClick} >
         <img  src={logo} className='h-10 ml-20'/>
+        </Link>
         </Typography>
         <Divider />
         <List>
           {navItems.map((item) => (
             <ListItem key={item} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemButton component={Link} to={`/${item.toLowerCase()}`} sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
               </ListItemButton>
             </ListItem>
@@ -44,6 +53,7 @@ export const Navbar = (props) => {
         </List>
       </Box>
     );
+    
   
     const container = window !== undefined ? () => window().document.body : undefined;
   
@@ -63,14 +73,15 @@ export const Navbar = (props) => {
             </IconButton>
             <Typography
               variant="h6"
-              component="div"
+              component={Link}
+              to="/"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             >
             <img sx={{my: 2}} src={logo} alt='logo' className='h-12 max-[600px]:hidden'/>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: 'black' }}>
+                <Button key={item} component={Link} to={`/${item.toLowerCase()}`} sx={{ color: 'black' }}>
                   {item}
                 </Button>
               ))}
