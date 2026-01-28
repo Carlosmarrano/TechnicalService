@@ -1,0 +1,509 @@
+Delivered-To: jcaguana1029@gmail.com
+Received: by 2002:a05:693c:2b15:b0:2a4:896c:4dd with SMTP id ro21csp2554070dyc;
+        Tue, 27 Jan 2026 14:43:03 -0800 (PST)
+X-Received: by 2002:a05:620a:1a13:b0:89e:f83c:ee0c with SMTP id af79cd13be357-8c70b9013a5mr431338585a.74.1769553783705;
+        Tue, 27 Jan 2026 14:43:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769553783; cv=none;
+        d=google.com; s=arc-20240605;
+        b=bsz/tTDPk/grZP3ZgD2vql9OiYV05NZpH2z/ieFxm5rjF2zSCRGtiaqLoCyRlVWsvk
+         JVePbFgdjMe/XZIYW2jPlsWKHVmi5Nyh5MRyXy8PQexNsqOpAGxy0Ee/9rV19e+KIGAp
+         s0o2Cb/RsZdApuduzE1NZB7IMm8K6TKhy62hA9HJGsC7Yw0XtuuwEqwjUNf/uJ9V++8O
+         eviI3ODulycZFZiL+SYbSQ7rZzyhjOBTth4qal7GW+FDPLHaIIvRKIpDTe4apv6RwIC0
+         4nwbTjU1p435/n6s6Z7TzFfMbWqj8cjCoTN1c7Sn3XQmEJaKehjlShOgtZONtE2O37WN
+         GEvA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=DRfnBEDzNepExdbqgkeO8iFz9cyJMC+OcSFeQivTqto=;
+        fh=5G1xyAY3ALScU3Cl4p/j6L2yAusAkOvhVskQ5Pe+bVg=;
+        b=NlmZjlcX7Pl7mVaeo/W1iRXnJ1GSDSYbFOL3ukmmMx/zUJUIA8zAPKBQlCYxaAfqlA
+         sMTo32Flkur8JCNPKIfEtWcpiVIL8CSmAWIWTuhtNJVG12rwNAJVAqw41kO6q8GnDsce
+         1ZJVzR8hpAL7tiX9v2IrPRX9eSU3LKBlBp7yrv+nYiHmORMZuNYjKVIK9a4j4ha6XuKt
+         CKvmRE1s07yLzELaKmTBGcI8v8xEEa7JnyRzf8Fujc7ievOticT4/WJqRQqfU/xM1WkE
+         rEuk73mxr2JFpzvUFwgBDwmRaNgD103Nc2tmRiFpVsew3AWm/PFL05ROrez5BJIkmPPe
+         OhfQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@notificacionesbcp.com.pe header.s=s1 header.b="hK4Y/CAN";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jhO6ZbQB;
+       spf=pass (google.com: domain of bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe designates 149.72.192.78 as permitted sender) smtp.mailfrom="bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=notificacionesbcp.com.pe
+Return-Path: <bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe>
+Received: from o2.ptr351.notificacionesbcp.com.pe (o2.ptr351.notificacionesbcp.com.pe. [149.72.192.78])
+        by mx.google.com with ESMTPS id af79cd13be357-8c711db5a3bsi94219285a.398.2026.01.27.14.43.03
+        for <jcaguana1029@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 27 Jan 2026 14:43:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe designates 149.72.192.78 as permitted sender) client-ip=149.72.192.78;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@notificacionesbcp.com.pe header.s=s1 header.b="hK4Y/CAN";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=jhO6ZbQB;
+       spf=pass (google.com: domain of bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe designates 149.72.192.78 as permitted sender) smtp.mailfrom="bounces+21601664-d62a-jcaguana1029=gmail.com@em4534.notificacionesbcp.com.pe";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=notificacionesbcp.com.pe
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=notificacionesbcp.com.pe;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=DRfnBEDzNepExdbqgkeO8iFz9cyJMC+OcSFeQivTqto=;
+	b=hK4Y/CANReckSLvuOPG4w72uVbX+UO+93OPabcQeNgftISlO18eSyLkXx4SiFuMNlos+
+	iJ+cPnSaJl2dsEXGPuvUZLG3f16xYRGQ0PoycWz3TZliNkZzjrDgGNgS+pXBzPQBX8E+Rd
+	ryKgSRiy/Xx6kRQEDjZLgmpgwssV936BbmGNdwABUFMLu+y9RynVaE9KYZNoU0nKJqcMyI
+	HQhJtWvmXFfWrK9gCmuG3Dslqczp8oc3KeJsPCuINpQlz373ylJprFk/GuVA21AbOkKnEH
+	IWA7XT8EpqhmxTIVHhF5Nt9NmiJM3cOguSJE2A0MpPZaRpVKwAtFLrt3YReffWPw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=DRfnBEDzNepExdbqgkeO8iFz9cyJMC+OcSFeQivTqto=;
+	b=jhO6ZbQBy435xfw2x1CxxiZ5PpaU3dF17PGKEBlWusd7ir6LBbZH3K1du/15RN6WIHQN
+	Ubvv8f0ccgMHWY7CqgjLr65P7MYXBS4VO3QIlh+pnKB3PvofBhQ4czzBPR2gDtTN3/gDY7
+	UqiW5h7JQ/lY3Z1godckpX/ptHkjowjcg=
+Received: by recvd-6cd446bd56-rmzj6 with SMTP id recvd-6cd446bd56-rmzj6-1-69793F76-3
+	2026-01-27 22:43:02.138530898 +0000 UTC m=+3544596.171621735
+Received: from MjE2MDE2NjQ (unknown)
+	by geopod-ismtpd-2 (SG) with HTTP
+	id -Yaf9SaeQfSjDLx9io5XWA
+	Tue, 27 Jan 2026 22:43:02.106 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 27 Jan 2026 22:43:02 +0000 (UTC)
+From: BCP Notificaciones <notificaciones@notificacionesbcp.com.pe>
+Mime-Version: 1.0
+Message-ID: <-Yaf9SaeQfSjDLx9io5XWA@geopod-ismtpd-2>
+Subject: Constancia de Transferencia a Otros Bancos - Servicio de
+ Notificaciones BCP
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EHba91y4EfB5n=2F+FQQgG7FV=2FnqVs2lEQhKJM2wExe+AWJqartOkL9bFhup?=
+ =?us-ascii?Q?ADfu0JOegqoR8y2AQk0SaKvC45marCutrE=2Fycow?=
+ =?us-ascii?Q?e99DcbrFb3eNFwQUJuLtUvHgRlAFNoDY4qC0+OD?=
+ =?us-ascii?Q?imR8qOTAerqK5oIE34Z7KdRI7meY7ZKC0UboZa3?=
+ =?us-ascii?Q?ddR4N7a1jnU7EuTZ65pZ=2FRefhApSyCDGp7C=2FlDp?=
+ =?us-ascii?Q?p5tX7x5hQBVIG7vsnMEaI4K0JMyR7pdtwnPG8ko?=
+ =?us-ascii?Q?VLdWyUokwFV4vPKhIvCzp2FvaQ=3D=3D?=
+To: jcaguana1029@gmail.com
+X-Entity-ID: u001.S9jHPKJK+9A8Iotoziub4Q==
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title></title>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <meta name=3D"format-detection" content=3D"telephone=3Dno">
+  <style type=3D"text/css">
+			body {background:#f2f2f2; margin: 0; padding: 0;}
+			img {height: auto;}
+			u + #body a {color:inherit; cursor:text !important; text-decoration:none=
+; font-size:inherit; font-family:inherit; font-weight:inherit; line-height:=
+inherit;}
+			.ExternalClass *{line-height:100%;}
+			a {text-decoration: none; color: inherit;}
+	=09
+</style>
+ </head>
+ <body id=3D"body" yahoo bgcolor=3D"#ffffff" leftmargin=3D"0" topmargin=3D"=
+0" marginwidth=3D"0" marginheight=3D"0">
+  <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"center" style=3D"background-color:#ffffff;">
+   <!-- ::::::::::::::::::::::::::::::::::-->
+   <!-- inicio.BODY ::::::::::::::::::::::-->
+   <!-- ::::::::::::::::::::::::::::::::::-->
+   <!-- inicio.header ::::::::::::::::::::::-->
+   <tr>
+    <td valign=3D"top" align=3D"center"><img src=3D"https://almacenbcp01.bl=
+ob.core.windows.net/bcp/NOTIFICACIONES-TD-TC/IdTemplate/ccm1_mbbk_016_001/h=
+eader.png" alt=3D"" width=3D"600"/></td>
+   </tr>
+   <!-- fin.header ::::::::::::::::::::::-->
+   <tr><td height=3D"32px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.saludo ::::::::::::::::::::::-->
+   <tr>
+    <td>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; lin=
+e-height:24px; text-align:left; margin:0px 24px 0px 24px; color: #1c2e46">H=
+ola <b>Jose Rafael,</b></p>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:24px; lin=
+e-height:32px; text-align:left; margin: 24px 24px 0px 24px; color: #002B93"=
+>Realizaste una transferencia de <b>S/ 500.00</b> desde tu <b>Clasica.</b><=
+/p>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; lin=
+e-height:24px; text-align:left; margin:24px 24px 0px 24px; color: #1c2e46">=
+A continuaci=C3=B3n, te enviamos los datos de tu operaci=C3=B3n.</p>
+    </td>
+   </tr>
+   <!-- fin.saludo ::::::::::::::::::::::-->
+   <tr><td height=3D"40px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.tabla_montos ::::::::::::::::::::::-->
+   <tr>
+    <td>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; lin=
+e-height:24px; text-align:left; margin:0px 24px 0px 24px; color: #002A8D"><=
+b>Montos</b></p>
+    </td>
+   </tr>
+   <tr><td height=3D"16px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <tr>
+    <td>
+     <table width=3D"552" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+align=3D"center">
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top" >Monto enviado</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica;  font-size:14px; line-height:24px; padding: 24px 0px 24px 0p=
+x; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgco=
+lor=3D"#ffffff" valign=3D"top"><b>S/ 500.00</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top" >Comisi=C3=B3n</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica;  font-size:14px; line-height:24px; padding: 24px 0px 24px 0p=
+x; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgco=
+lor=3D"#ffffff" valign=3D"top"><b>S/ 0.00</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top" >Total cobrado</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica;  font-size:14px; line-height:24px; padding: 24px 0px 24px 0p=
+x; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgco=
+lor=3D"#ffffff" valign=3D"top"><b>S/ 500.00</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top" >Tipo de cambio</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica;  font-size:14px; line-height:24px; padding: 24px 0px 24px 0p=
+x; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgco=
+lor=3D"#ffffff" valign=3D"top"><b>S/ 3.3170</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:16px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top" ><b>Total cobrado al tipo de camb=
+io</b></td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica;  font-size:16px; line-height:24px; padding: 24px 0px 24px 0p=
+x; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgco=
+lor=3D"#ffffff" valign=3D"top"><b>$ 150.74</b></td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+   <!-- fin.tabla_montos ::::::::::::::::::::::-->
+   <tr><td height=3D"40px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.tabla_datos ::::::::::::::::::::::-->=20
+   <tr>
+    <td>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; lin=
+e-height:24px; text-align:left; margin:0px 24px 0px 24px; color: #002A8D"><=
+b>Datos de la operaci=C3=B3n</b></p>
+    </td>
+   </tr>
+   <tr><td height=3D"16px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <tr>
+    <td>
+     <table width=3D"552" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+align=3D"center">
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#FFFFFF" valign=3D"top">Operaci=C3=B3n realizada</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#FFFFFF" valign=3D"top"><b>Transferencia a otros bancos</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Fecha y hora</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>27 de Enero de 2026 - 05:42 PM</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Enviado a</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Christiam Calle V.</b><br>**** 6042</td>
+      </tr>     =20
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Banco destino</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Interbank</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Moneda</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Soles</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Tipo de env=C3=ADo</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Inmediato</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Desde</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Clasica</b><br>**** 5136</td>
+      </tr>=20
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Mensaje</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b></b></td>
+      </tr>    =20
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">Canal</td>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>Banca M=C3=B3vil BCP</b></td>
+      </tr>
+      <tr>
+       <td style=3D"width:276px; -webkit-text-size-adjust:none; font-family=
+: Arial, Tahoma, Helvetica; font-size:14px; line-height:24px; padding: 24px=
+ 0px 24px 0px; color:#202E44; text-align:left; border-bottom: 1px solid #EA=
+EFF5;" bgcolor=3D"#ffffff" valign=3D"top">N=C3=BAmero de operaci=C3=B3n</td=
+>
+       <td style=3D"-webkit-text-size-adjust:none; font-family: Arial, Taho=
+ma, Helvetica; font-size:14px; line-height:24px; padding: 24px 0px 24px 0px=
+; color:#202E44; text-align:right; border-bottom: 1px solid #EAEFF5;" bgcol=
+or=3D"#ffffff" valign=3D"top"><b>03900126</b></td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+   <!-- fin.tabla_datos ::::::::::::::::::::::-->=20
+   <tr><td height=3D"32px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.banner_informativo ::::::::::::::::::::::-->  =20
+   <tr>
+    <td>
+     <table style=3D"background-color:#EBF4FF; border-radius: 0px; margin:0=
+px 24px 0px 24px;" width=3D"552" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" align=3D"center">
+      <tr>
+       <td valign=3D"top" align=3D"right" width=3D"72">
+        <img style=3D"margin:37px 0px 24px 16px; display: block;" src=3D"ht=
+tps://almacenbcp01.blob.core.windows.net/bcp/NOTIFICACIONES-TD-TC/IdTemplat=
+e/ccm1_mbbk_016_001/icon1.png" alt=3D"" width=3D"72"/>
+       </td>
+       <td valign=3D"center" align=3D"center" width=3D"16"><strong>=C2=A0</=
+strong></td>
+       <td width=3D"360" valign=3D"center">
+        <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; =
+line-height:24px; color:#0A47F0; text-align:left; margin:32px 0px 8px 0px;"=
+><b>=C2=BFNo reconoces esta operaci=C3=B3n?</b></p>
+        <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; =
+line-height:24px; color:#1c2e46; text-align:left; margin:0px 24px 0px 0px;"=
+>Comun=C3=ADcate inmediatamente con nosotros al</p>
+        <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; =
+line-height:24px; color:#1c2e46; text-align:left; margin:0px 24px 32px 0px;=
+"><span style=3D"white-space:nowrap; text-decoration:none; color:#1c2e46">(=
+01)=E2=80=8B </span> <span style=3D"white-space:nowrap; text-decoration:non=
+e; color:#1c2e46">311=E2=80=8B-</span><span style=3D"white-space:nowrap; te=
+xt-decoration:none; color:#1c2e46">9898</span> anexo *911 para ayudarte a v=
+erificarla.</p>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>=20
+   <!-- fin.banner_informativo ::::::::::::::::::::::-->=20
+   <tr><td height=3D"40px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.mensaje_cierre ::::::::::::::::::::::-->  =20
+   <tr>
+    <td>
+     <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:16px; lin=
+e-height:32px; text-align:left; margin: 0px 24px 0px 24px; color: #002B93">=
+<b>=C2=A1Seguimos transformando tus planes en realidad!</b></p>
+    </td>
+   </tr>
+   <!-- fin.mensaje_cierre ::::::::::::::::::::::-->=20
+ =20
+   <tr><td height=3D"40px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.footer ::::::::::::::::::::::-->  =20
+   <tr>
+    <td valign=3D"center" align=3D"center" width=3D"600">
+     <img src=3D"https://almacenbcp01.blob.core.windows.net/bcp/NOTIFICACIO=
+NES-TD-TC/IdTemplate/ccm1_mbbk_016_001/cierre.png" alt=3D"" width=3D"600" s=
+tyle=3D"display:block;"/>
+    </td>
+   </tr>
+   <!-- fin.footer ::::::::::::::::::::::-->=20
+   <tr><td height=3D"24px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- inicio.legal ::::::::::::::::::::::-->  =20
+   <tr>
+    <td>
+     <table align=3D"center" width=3D"552" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0">
+      <tr>
+       <td>
+        <table width=3D"552" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" align=3D"center">
+         <tr>
+          <td valign=3D"top" align=3D"center" width=3D"78">
+           <img style=3D"margin:0px 0px 0px 0px; display: block;" src=3D"ht=
+tps://almacenbcp01.blob.core.windows.net/bcp/NOTIFICACIONES-TD-TC/IdTemplat=
+e/ccm1_mbbk_016_001/sello-compromiso.png" alt=3D"" width=3D"78"/>
+          </td>
+          <td valign=3D"center" align=3D"center" width=3D"24">=C2=A0</td>
+          <td width=3D"450" valign=3D"top" style=3D"font-family: Arial, Tah=
+oma, Helvetica;  font-size:9px; line-height:16px; color:#002a8d; text-align=
+:justify;">
+           <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:9px=
+; line-height:16px; text-align:justify; margin:0px 0px 0px 0px;"><b>Juntos =
+somos m=C3=A1s seguros</b><br>El BCP nunca te solicitar=C3=A1 datos confide=
+nciales por correo, tales como tu clave secreta de cajero de 4 d=C3=ADgitos=
+, clave de internet de 6 d=C3=ADgitos, n=C3=BAmero de tu tarjeta de d=C3=A9=
+bito o cr=C3=A9dito, fecha de vencimiento, c=C3=B3digo CVV, c=C3=B3digo de =
+validaci=C3=B3n OTP o clave Token, para resolver supuestos problemas con tu=
+s cuentas o para participar en sorteos o promociones.</p>
+          </td>
+         </tr>
+        </table>
+       </td>
+      </tr>
+      <tr><td height=3D"16px" style=3D"border-spacing: 0px;">=C2=A0</td></t=
+r>
+      <tr>
+       <td width=3D"552" valign=3D"top" style=3D"font-family: Arial, Tahoma=
+, Helvetica;  font-size:9px; line-height:16px; color:#002a8d; text-align:ju=
+stify;">
+                <p style=3D"font-family: Arial, Tahoma, Helvetica; font-siz=
+e: 9px; line-height: 16px; text-align: justify; margin: 0px 0px 0px 0px;">N=
+uestros correos personalizados con bot=C3=B3n o link, =C3=BAnicamente te di=
+rigir=C3=A1n a <span style=3D"white-space:nowrap; text-decoration:none; col=
+or:#002a8d">www=E2=80=8B.viabcp=E2=80=8B.com</span> o sus p=C3=A1ginas inte=
+rnas, es decir, que contengan <span style=3D"white-space:nowrap; text-decor=
+ation:none; color:#002a8d">.viabcp=E2=80=8B.com</span> en la direcci=C3=B3n=
+ web. En caso tengas dudas sobre alguna comunicaci=C3=B3n del BCP puedes co=
+municarte con nosotros a trav=C3=A9s de nuestras redes sociales, al grupo d=
+e Facebook Alerta Fraude o llamando al <span style=3D"white-space:nowrap; t=
+ext-decoration:none; color:#002a8d">(01)=E2=80=8B </span> <span style=3D"wh=
+ite-space:nowrap; text-decoration:none; color:#002a8d">311=E2=80=8B-</span>=
+<span style=3D"white-space:nowrap; text-decoration:none; color:#002a8d">989=
+8.</span></p>
+      <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size: 9px; li=
+ne-height: 16px; text-align: justify; margin: 0px 0px 0px 0px;">Nuestros e-=
+mails no incluir=C3=A1n archivos adjuntos (a excepci=C3=B3n del env=C3=ADo =
+de los estados de cuenta u otros documentos solicitados y/o coordinados pre=
+viamente con nosotros).</p>
+      <p style=3D" font-family: Arial, Tahoma, Helvetica; font-size: 9px; l=
+ine-height: 16px; text-align: justify; margin: 0px 0px 0px 0px;">Para conoc=
+er m=C3=A1s sobre las principales modalidades de fraude, aprender a reconoc=
+erlas y c=C3=B3mo protegerte, ingresa a <span style=3D"white-space:nowrap; =
+text-decoration:none; color:#002a8d">https=E2=80=8B://www=E2=80=8B.viabcp=
+=E2=80=8B.com/seguridad</span> y mantente atento a las publicaciones peri=
+=C3=B3dicas que realizamos en nuestras redes sociales.</p>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+   <tr><td height=3D"24px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <tr>
+    <td>
+    <table align=3D"center" width=3D"552" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0">
+     <tr>
+      <td>
+       <table width=3D"552" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" align=3D"center">
+        <tr>
+         <td width=3D"470" valign=3D"top" style=3D"font-family: Arial, Taho=
+ma, Helvetica;  font-size:9px; line-height:16px; color:#1c2e46; text-align:=
+justify;">
+          <p style=3D"font-family: Arial, Tahoma, Helvetica; font-size:9px;=
+ line-height:16px; text-align:justify; margin:0px 0px 0px 0px;">Si deseas d=
+esafiliarte del Servicio de Notificaciones BCP, puedes realizarlo respondie=
+ndo al correo <span style=3D"white-space:nowrap; text-decoration:none; colo=
+r:#1c2e46;"><b>notificacionescrm=E2=80=8B@bcp=E2=80=8B.com=E2=80=8B.pe</b><=
+/span> con el asunto <b>=E2=80=9CREMOVER=E2=80=9D</b>. Tu solicitud ser=C3=
+=A1 atendida en un plazo de 72 horas. Ten en cuenta que al elegir esta opci=
+=C3=B3n dejar=C3=A1s de recibir informaci=C3=B3n importante sobre el contro=
+l y seguridad de tus Tarjetas BCP. En caso desees volver a recibir estas no=
+tificaciones deber=C3=A1s escribir al mismo buz=C3=B3n <span style=3D"white=
+-space:nowrap; text-decoration:none; color:#1c2e46;"><b>notificacionescrm=
+=E2=80=8B@bcp=E2=80=8B.com=E2=80=8B.pe</b></span>  con el asunto <b>=E2=80=
+=9CRECIBIR=E2=80=9D</b>. Si este correo omite vocales, tildes, letras =E2=
+=80=9C=C3=B1=E2=80=9D o =C3=A9stas son cambiadas por otros caracteres, no s=
+e debe a errores ortogr=C3=A1ficos del Banco de Cr=C3=A9dito BCP. El sistem=
+a de correo electr=C3=B3nico del BCP est=C3=A1 destinado =C3=BAnicamente pa=
+ra fines de negocio, cualquier otro uso contraviene las pol=C3=ADticas del =
+Banco. Toda la informaci=C3=B3n del negocio contenida en este mensaje es co=
+nfidencial y de uso exclusivo del BCP. Su divulgaci=C3=B3n, copia y/o adult=
+eraci=C3=B3n est=C3=A1n prohibidas y solo debe ser conocida por la persona =
+a quien se dirige este mensaje. Esta informaci=C3=B3n se env=C3=ADa de acue=
+rdo a la legislaci=C3=B3n correo electr=C3=B3nico comercial no solicitado -=
+ SPAM seg=C3=BAn Leyes 28493 y 29246. Banco de Cr=C3=A9dito del Per=C3=BA S=
+.A. - RUC: <span style=3D"white-space:nowrap; text-decoration:none; color:#=
+1c2e46;">20100=E2=80=8B047218</span>.</p>
+         </td>
+        </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+    </td>
+   </tr>
+   <!-- fin.legal ::::::::::::::::::::::-->=20
+   <tr><td height=3D"32px" style=3D"border-spacing: 0px;">=C2=A0</td></tr>
+   <!-- ::::::::::::::::::::::::::::::::::-->
+   <!-- fin.BODY :::::::::::::::::::::::::-->
+   <!-- ::::::::::::::::::::::::::::::::::-->
+       </table>
+    <img src=3D"https://u21601664.ct.sendgrid.net/wf/open?upn=3Du001.WJWwDc=
+zKff5tQgJBIYYa998h6alqOyqPUuCQdI8HOlxgUT972VmfT-2FwYCw7TwnSc8iyVJ9PWp8O-2BI=
+JauOg-2BY1l5EOaA07xRDWgr6rmLz-2B49lT0VaaAVNgYZxXDEf4fS-2Bx5GxqX2g9vB2wtNZOu=
+lk2NJlcPK9wcYF5U8QY0kUUK2VKQrjj-2Bpu-2BpMre0yw5ApQfeGLlXFdkDDZwj-2BohYRyiA-=
+3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !=
+important;width:1px !important;border-width:0 !important;margin-top:0 !impo=
+rtant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !i=
+mportant;padding-top:0 !important;padding-bottom:0 !important;padding-right=
+:0 !important;padding-left:0 !important;"/></body>
+</html>

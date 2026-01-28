@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Container, Divider, Grid, Link, Stack, TextField, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid, Link, Stack, Typography } from "@mui/material";
 import { TechnicalLayout } from "../layout/TechnicalLayout";
 import headerImage from "../../../public/header.png";
 import ServiceImage from "../../../public/logo.png";
@@ -13,7 +13,7 @@ import { InfoButton } from "../components/Buttons/infoButton";
 import { ReviewsButton } from "../components/Buttons/ReviewsButton";
 import { AllServiceButton } from "../components/Buttons/AllServiceButton";
 import { AboutUsButton } from "../components/Buttons/AboutUsButton";
-import { FormButtom } from "../components/Buttons/FormButton";
+import { ContactForm } from "../components/ContactForm";
 
 export const HomePage = () => {
 
@@ -104,34 +104,7 @@ export const HomePage = () => {
                 </Box>
             </Grid>
 
-            <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "column", gap: 4, marginRight: 10 }}>
-                <Box>
-                    <Typography variant="h2" sx={{ textAlign: "center", fontSize: { xs: 40, sm: 50, lg: 60 } }}>
-                        Contáctanos
-                    </Typography>
-                </Box>
-                <Card sx={{ backgroundColor: "secondary.main", maxWidth: 800, display: "flex", justifyContent: "center", alignContent: "center", boxShadow: 5, mx: "auto" }}>
-                    <CardContent>
-                        <form>
-                            <Grid container spacing={1}>
-                                <Grid size={{ xs: 12, sm: 6 }}>
-                                    <TextField type="text" label="Nombre Completo" placeholder="Pedrito Pedro" variant="outlined" fullWidth required />
-                                </Grid>
-                                <Grid size={{ xs: 12, sm: 6 }}>
-                                    <TextField type="text" label="Apellido Completo" placeholder="Martinez Dominguez" variant="outlined" fullWidth required />
-                                </Grid>
-                                <Grid size={{ xs: 12 }}>
-                                    <TextField type="email" label="Email" placeholder="Tucorreoelectronico@gmail.com" variant="outlined" fullWidth required />
-                                </Grid>
-                                <Grid size={{ xs: 12 }}>
-                                    <TextField label="Message" multiline rows={5} placeholder="Deja tu mensaje" variant="outlined" fullWidth required />
-                                </Grid>
-                                <FormButtom />
-                            </Grid>
-                        </form>
-                    </CardContent>
-                </Card>
-            </Grid>
+            <ContactForm/>
 
             <Grid component="footer" sx={{ marginTop: 20 }}>
                 <Container maxWidth="lg">

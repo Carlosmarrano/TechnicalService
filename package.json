@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@hookform/resolvers": "^5.2.2",
     "@mui/codemod": "^7.0.2",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
@@ -19,6 +20,7 @@
     "pigeon-maps": "^0.22.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.71.1",
     "react-router-dom": "^6.30.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
