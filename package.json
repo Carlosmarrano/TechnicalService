@@ -15,6 +15,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@mui/codemod": "^7.0.2",
     "@mui/icons-material": "^7.0.2",
+    "@mui/lab": "^7.0.1-beta.21",
     "@mui/material": "^7.0.2",
     "@tailwindcss/vite": "^4.1.4",
     "pigeon-maps": "^0.22.1",
