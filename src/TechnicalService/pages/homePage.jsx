@@ -1,7 +1,6 @@
 import { Box, Container, Divider, Grid, Link, Stack, Typography } from "@mui/material";
 import { TechnicalLayout } from "../layout/TechnicalLayout";
 import headerImage from "../../../public/header.png";
-import ServiceImage from "../../../public/logo.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -14,6 +13,10 @@ import { ReviewsButton } from "../components/Buttons/ReviewsButton";
 import { AllServiceButton } from "../components/Buttons/AllServiceButton";
 import { AboutUsButton } from "../components/Buttons/AboutUsButton";
 import { ContactForm } from "../components/ContactForm";
+import ConstructionIcon from '@mui/icons-material/Construction';
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import ComputerIcon from '@mui/icons-material/Computer';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
 
 export const HomePage = () => {
 
@@ -61,28 +64,28 @@ export const HomePage = () => {
 
                 <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" }, justifyContent: "space-between", gap: 4, width: "100%" }}>
                     <Box sx={{ flex: 1, border: "1px solid secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, maxWidth: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                        <Box component="img" src={ServiceImage} alt="Imagen1" sx={{ width: "100%", maxWidth: 100, borderRadius: 1 }} />
+                        <ConstructionIcon sx={{ fontSize: 50, color: "#002D3E" }}/>
                         <Typography variant="h5">Servicio Técnico</Typography>
-                        <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earum.</Typography>
+                        <Typography>Contamos con un equipo de especialistas altamente capacitados para brindar mantenimiento preventivo y correctivo, asegurando que tus activos operen siempre al 100%.</Typography>
                     </Box>
 
                     <Box sx={{ flex: 1, border: "1px solid secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, maxWidth: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                        <Box component="img" src={ServiceImage} alt="Imagen2" sx={{ width: "100%", maxWidth: 100, borderRadius: 1 }} />
+                        <HeadsetMicIcon sx={{ fontSize: 50, color: "#002D3E" }}/>
                         <Typography variant="h5">Atención al Cliente</Typography>
-                        <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earum.</Typography>
+                        <Typography>Tu tranquilidad es nuestra prioridad. Ofrecemos un canal de comunicación directo y eficiente para resolver dudas, gestionar solicitudes y brindarte acompañamiento constante.</Typography>
                     </Box>
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" }, justifyContent: "space-between", gap: 4, width: "100%" }}>
                     <Box sx={{ flex: 1, border: "1px solid secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, maxWidth: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                        <Box component="img" src={ServiceImage} alt="Imagen1" sx={{ width: "100%", maxWidth: 100, borderRadius: 1 }} />
+                        <ComputerIcon sx={{ fontSize: 50, color: "#002D3E" }}/>
                         <Typography variant="h5">Soporte Técnico</Typography>
-                        <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earum.</Typography>
+                        <Typography>Asistencia especializada para resolver cualquier incidencia operativa de forma rápida, ya sea de manera presencial o remota, minimizando tiempos de inactividad.</Typography>
                     </Box>
                     <Box sx={{ flex: 1, border: "1px solid secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, maxWidth: "100%", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                        <Box component="img" src={ServiceImage} alt="Imagen1" sx={{ width: "100%", maxWidth: 100, borderRadius: 1 }} />
+                        <LightbulbIcon sx={{ fontSize: 50, color: "#002D3E" }}/>
                         <Typography variant="h5">Consultoria</Typography>
-                        <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earum.</Typography>
+                        <Typography>Te asesoramos en la toma de decisiones estratégicas para optimizar tus recursos tecnológicos y operativos, adaptándonos a las necesidades específicas de tu proyecto.</Typography>
                     </Box>
                 </Box>
                 <AllServiceButton />
