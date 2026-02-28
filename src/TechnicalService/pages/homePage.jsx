@@ -18,6 +18,7 @@ import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import ComputerIcon from '@mui/icons-material/Computer';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { Element } from "react-scroll";
+import { ReviewSlider } from "../components/ReviewSlider";
 
 export const HomePage = () => {
 
@@ -112,6 +113,8 @@ export const HomePage = () => {
             </Grid>
 
             <ContactForm />
+
+            <ReviewSlider/>
 
             <Grid component="footer" sx={{ marginTop: 20 }}>
                 <Container maxWidth="lg">
