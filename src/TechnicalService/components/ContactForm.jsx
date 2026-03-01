@@ -5,17 +5,19 @@ import { useState } from "react"
 
 export const ContactForm = () => {
 
-    const { control, handleSubmit } = useForm({
+    const { control, handleSubmit, reset } = useForm({
         defaultValues: {
             Nombre: "",
             Apellido: "",
             Email: "",
             Mensaje: "",
+
         },
     })
 
     const onSubmit = () => {
         setOpen(true);
+        reset();
     };
 
     const [open, setOpen] = useState(false);
