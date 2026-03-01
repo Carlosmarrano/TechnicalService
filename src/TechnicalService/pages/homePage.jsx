@@ -114,7 +114,9 @@ export const HomePage = () => {
 
             <ContactForm />
 
-            <ReviewSlider/>
+            <Element name="scrollToSliderSection">
+                <ReviewSlider />
+            </Element>
 
             <Grid component="footer" sx={{ marginTop: 20 }}>
                 <Container maxWidth="lg">

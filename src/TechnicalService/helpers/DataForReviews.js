@@ -1,7 +1,7 @@
 export const data = [
     {
         id: 1,
-        name: "John Doe",
+        name: "Nia Adebayo",
         img: "worker1.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
@@ -13,7 +13,7 @@ export const data = [
     },
     {
         id: 3,
-        name: "Nia Adebayo",
+        name: "John Doe",
         img: "worker3.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
@@ -25,37 +25,37 @@ export const data = [
     },
     {
         id: 5,
-        name: "John Doe",
+        name: "Britney Smith",
         img: "worker5.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
     {
         id: 6,
-        name: "John Doe",
+        name: "Mark Jones",
         img: "worker6.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
     {
         id: 7,
-        name: "John Doe",
+        name: "Brad Williams",
         img: "worker7.png",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
     {
         id: 8,
-        name: "John Doe",
+        name: "Steven Brown",
         img: "worker8.jpeg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
     {
         id: 9,
-        name: "John Doe",
+        name: "Bryan Taylor",
         img: "worker9.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
     {
         id: 10,
-        name: "John Doe",
+        name: "Frank Wilson",
         img: "worker10.jpg",
         review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, facilis ullam. Aliquid ad odio eveniet earumLorem ipsum dolor sit amet"
     },
