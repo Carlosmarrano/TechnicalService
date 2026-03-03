@@ -31,7 +31,7 @@ export const ReviewSlider = () => {
     }
 
     return (
-        <Box sx={{ marginTop: 20, display: "flex", alignItems: "center", maxWidth: "1200px",justifyContent: "center", textAlign: "center",  gap: { xs: 0, sm: 2 }, marginRight: { xs: 10, md: 8 }, marginLeft: {xs: 0,lg: 10} }}>
+        <Box sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "row", marginRight: 10 }}>
 
             <IconButton onClick={() => handleStep("prev")} disabled={!checked} sx={{zIndex: 2}} >
                 <ArrowBackIosNew/>
@@ -47,7 +47,7 @@ export const ReviewSlider = () => {
                                 md: "flex"
                             },
                             justifyContent: "center", alignItems: "center"}}>
-                                <Box sx={{border: "1px solid", borderColor: "secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, width: "100%", maxWidth: "350px", height: "100%" , backgroundColor: "background.paper", overflow: "hidden"}}>
+                                <Box sx={{border: "1px solid", borderColor: "secondary.main", boxShadow: 4, padding: 4, borderRadius: 2, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, width: "100%", maxWidth: "500px", height: "100%" , backgroundColor: "background.paper", overflow: "hidden"}}>
                                     <Box component="img" src={d.img} sx={{width: 80, height: 80, borderRadius: "50%", objectFit: "cover" }} alt={d.name} />
                                     <Typography variant="h6" component="div">{d.name}</Typography>
                                     <Typography variant="body1">{d.review}</Typography>
