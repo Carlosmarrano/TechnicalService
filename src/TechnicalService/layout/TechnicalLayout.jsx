@@ -5,13 +5,13 @@ import { ScrollTop } from "../components/ScrollTop";
 export const TechnicalLayout = ({children}) => {
 
     return(
-        <Box sx={{display: 'flex', backgroundColor: "secondary.main"}}>
+        <Box sx={{display: 'flex', backgroundColor: "secondary.main", minHeight: "100dvh", width: "100%", overflow: "hidden"}}>
 
             <ScrollTop/>
             
             <Navbar/>
 
-            <Box component='main' sx={{flexGrow: 1}}>
+            <Box component='main' sx={{flexGrow: 1, width:"100%"}}>
                 {children}
             </Box>
         </Box>
