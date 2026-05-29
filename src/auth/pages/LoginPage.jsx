@@ -20,10 +20,10 @@ export const LoginPage = () => {
             <Button variant="contained" fullWidth >Login</Button>
           </Grid>
           <Grid size={{ xs: 4 }}> 
-            <Button variant="contained" sx={{height: "37px"}} fullWidth startIcon={<Google />}></Button>
+            <Button variant="contained" sx={{height: "36.5px"}} fullWidth aria-label='Google' aria-labelledby='link' role='button' ><Google/></Button>
           </Grid>
           <Grid size={{ xs: 4 }}> 
-            <Button variant="contained" sx={{height: "37px"}} fullWidth  startIcon={<Apple />}></Button>
+            <Button variant="contained" sx={{height: "36.5px"}} fullWidth aria-label='Apple' aria-labelledby='link' role='button'><Apple/></Button>
           </Grid>
         </Grid>
         <Grid container direction="row" justifyContent="end" sx={{ mt: 2 }}>
