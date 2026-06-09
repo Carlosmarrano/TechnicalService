@@ -3,10 +3,13 @@ import { Link as RouterLink } from "react-router-dom";
 import { Apple, Google } from "@mui/icons-material";
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks/useForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkingAuthentication, startGoogleSignIn } from '../../store/auth/thunks';
+import { useMemo } from 'react';
 
 export const LoginPage = () => {
+
+  const {status} = useSelector(state => state.auth);
 
   const dispatch = useDispatch();
 
@@ -14,6 +17,8 @@ export const LoginPage = () => {
     email: "",
     password: ""  
   });
+
+  const isAuthenticating = useMemo( () => status === 'checking', [status]);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -40,10 +45,10 @@ export const LoginPage = () => {
 
         <Grid container spacing={2} sx={{ mt: 2 }} >
           <Grid size={{ xs: 4 }}>
-            <Button variant="contained" fullWidth type="submit">Login</Button>
+            <Button disabled={ isAuthenticating } variant="contained" fullWidth type="submit">Login</Button>
           </Grid>
           <Grid size={{ xs: 4 }}>
-            <Button variant="contained" sx={{ height: "36.5px" }} fullWidth aria-label='Google' aria-labelledby='link' role='button' onClick={ onGoogleSignIn} ><Google /></Button>
+            <Button disabled={ isAuthenticating } variant="contained" sx={{ height: "36.5px" }} fullWidth aria-label='Google' aria-labelledby='link' role='button' onClick={ onGoogleSignIn } ><Google /></Button>
           </Grid>
           <Grid size={{ xs: 4 }}>
             <Button variant="contained" sx={{ height: "36.5px" }} fullWidth aria-label='Apple' aria-labelledby='link' role='button'><Apple /></Button>
