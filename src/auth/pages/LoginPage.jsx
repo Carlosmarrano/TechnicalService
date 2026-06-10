@@ -1,15 +1,15 @@
-import { TextField, Grid, Button, Link } from '@mui/material';
+import { TextField, Grid, Button, Link, Alert } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { Apple, Google } from "@mui/icons-material";
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkingAuthentication, startGoogleSignIn } from '../../store/auth/thunks';
+import { checkingAuthentication, startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth/thunks';
 import { useMemo } from 'react';
 
 export const LoginPage = () => {
 
-  const {status} = useSelector(state => state.auth);
+  const {status, errorMessage} = useSelector(state => state.auth);
 
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ export const LoginPage = () => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(checkingAuthentication());
+    dispatch(startLoginWithEmailPassword({email, password}));
   };
 
   const onGoogleSignIn = () => {
@@ -44,6 +44,9 @@ export const LoginPage = () => {
         </Grid>
 
         <Grid container spacing={2} sx={{ mt: 2 }} >
+          <Grid size={{ xs: 12 }} display={ !!errorMessage ? '' : 'none' }>
+            <Alert severity="error">{errorMessage}</Alert>
+          </Grid>
           <Grid size={{ xs: 4 }}>
             <Button disabled={ isAuthenticating } variant="contained" fullWidth type="submit">Login</Button>
           </Grid>
