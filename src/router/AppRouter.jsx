@@ -32,11 +32,11 @@ export const AppRouter = () => {
 
         {
             (status === "authenticated")
-            ? <Route path="/"  element={ <TechnicalServiceRoutes /> }/>
+            ? <Route path="/*"  element={ <TechnicalServiceRoutes /> }/>
             : <Route path="/auth/*" element={ <AuthRoutes />  }/>
         }
 
-        <Route path="/" element={<Navigate />} />
+        <Route path="*" element={<Navigate to={status === "authenticated" ? "/" : "/auth/login"} />} />
         
         {/**Login & Registro */}
         {/* <Route path="/auth/*" element={ <AuthRoutes />  }/> */}

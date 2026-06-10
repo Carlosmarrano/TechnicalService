@@ -9,14 +9,14 @@ import { PageNotFound } from "../pages/404PagenotFound"
 export const TechnicalServiceRoutes = () => {
     return(
         <Routes>
-            <Route path="/" element={ <HomePage/>} />
-            <Route path="/service" element={ <ServicesPage/>} />
-            <Route path="/about" element={ <AboutPage/>} />
-            <Route path="/contact" element={ <ContactPage/>} />
+            <Route path="" element={ <HomePage/>} />
+            <Route path="service" element={ <ServicesPage/>} />
+            <Route path="about" element={ <AboutPage/>} />
+            <Route path="contact" element={ <ContactPage/>} />
             {/**404 Page not found */}
             
             <Route path="/404PageNotFound" element={ <PageNotFound/>} />
-            <Route path="/*" element={ <Navigate to="/404PageNotFound" /> }/>
+            <Route path="*" element={ <Navigate to="/404PageNotFound" /> }/>
         </Routes>
     )
 }
