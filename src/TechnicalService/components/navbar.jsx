@@ -16,11 +16,21 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import logo from "../../../public/logo.png"
 import { Link } from 'react-router-dom';
+import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
+import { useDispatch } from 'react-redux';
+import { startLogout } from '../../store/auth/thunks';
 
 const drawerWidth = 240;
 const navItems = ['About', 'Service', 'Contact'];
 
 export const Navbar = (props) => {
+
+  const dispatch = useDispatch();
+
+  const onLogout = () => {
+    dispatch(startLogout());
+  }
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
   
@@ -50,6 +60,14 @@ export const Navbar = (props) => {
               </ListItemButton>
             </ListItem>
           ))}
+
+          <ListItem disablePadding>
+              <ListItemButton onClick={onLogout} sx={{ justifyContent: "center", color: "error.main" }}>
+                <IconButton color="inherit">
+                  <LogoutOutlined />
+                </IconButton>
+              </ListItemButton>
+            </ListItem>
         </List>
       </Box>
     );
@@ -79,12 +97,16 @@ export const Navbar = (props) => {
             >
             <img sx={{my: 2}} src={logo} alt='logo' className='h-12 max-[600px]:hidden'/>
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: "center" }}>
               {navItems.map((item) => (
                 <Button key={item} component={Link} to={`/${item.toLowerCase()}`} sx={{ color: 'black' }}>
                   {item}
                 </Button>
               ))}
+
+              <IconButton onClick={onLogout} sx={{color: 'error.main', ml: 2}} aria-label="logout">
+                <LogoutOutlined />
+              </IconButton>
             </Box>
           </Toolbar>
         </AppBar>
