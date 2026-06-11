@@ -15,8 +15,8 @@ export const TechnicalServiceRoutes = () => {
             <Route path="contact" element={ <ContactPage/>} />
             {/**404 Page not found */}
             
-            <Route path="/404PageNotFound" element={ <PageNotFound/>} />
-            <Route path="*" element={ <Navigate to="/404PageNotFound" /> }/>
+            <Route path="404PageNotFound" element={ <PageNotFound/>} />
+            <Route path="*" element={ <Navigate to="404PageNotFound" /> }/>
         </Routes>
     )
 }
