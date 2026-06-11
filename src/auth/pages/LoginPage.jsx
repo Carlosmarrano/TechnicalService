@@ -47,15 +47,15 @@ export const LoginPage = () => {
           <Grid size={{ xs: 12 }} display={ !!errorMessage ? '' : 'none' }>
             <Alert severity="error">{errorMessage}</Alert>
           </Grid>
-          <Grid size={{ xs: 4 }}>
+          <Grid size={{ xs: 6 }}>
             <Button disabled={ isAuthenticating } variant="contained" fullWidth type="submit">Login</Button>
           </Grid>
-          <Grid size={{ xs: 4 }}>
+          <Grid size={{ xs: 6 }}>
             <Button disabled={ isAuthenticating } variant="contained" sx={{ height: "36.5px" }} fullWidth aria-label='Google' aria-labelledby='link' role='button' onClick={ onGoogleSignIn } ><Google /></Button>
           </Grid>
-          <Grid size={{ xs: 4 }}>
+{/*           <Grid size={{ xs: 4 }}>
             <Button variant="contained" sx={{ height: "36.5px" }} fullWidth aria-label='Apple' aria-labelledby='link' role='button'><Apple /></Button>
-          </Grid>
+          </Grid> */}
         </Grid>
         <Grid container direction="row" justifyContent="end" sx={{ mt: 2 }}>
           <Link component={RouterLink} color="inherit" to="/auth/register">Crea una cuenta</Link>
