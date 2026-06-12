@@ -19,8 +19,26 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { Element } from "react-scroll";
 import { ReviewSlider } from "../components/ReviewSlider";
+import { useEffect, useState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export const HomePage = () => {
+
+    const [displayName, setDisplayName] = useState("");
+
+    useEffect(() => {
+        const auth = getAuth();
+
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setDisplayName(user.displayName || user.email || "");
+      } else {
+        setDisplayName("");
+      }
+    });
+
+    return () => unsubscribe();
+    }, []);
 
     return (
         <TechnicalLayout>
@@ -28,7 +46,7 @@ export const HomePage = () => {
 
                 <Grid sx={{ textAlign: { xs: "center", md: "left" }, flex: 1, maxWidth: { xs: "68%", md: "100%" } }}>
                     <Typography variant="h1" sx={{ fontSize: { xs: 40, md: 60 }, fontWeight: 500 }}>
-                        En Petu Service, le damos solución a tus problemas en casa
+                      Hola { displayName }, En Petu Service, le damos solución a tus problemas en casa
                     </Typography>
                     <InfoButton />
                 </Grid>
