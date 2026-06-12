@@ -45,12 +45,10 @@ export const Navbar = (props) => {
     }
   
     const drawer = (
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-        <Link to="/" onClick={handleNavClick} >
-        <img  src={logo} className='h-10 ml-20'/>
-        </Link>
-        </Typography>
+      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
+        <Box component={Link} to="/" onClick={handleNavClick} sx={{display: "inline-block", mb: 1}}>
+          <img src={logo} className='h-10' alt="logo"/>
+        </Box>
         <Divider />
         <List>
           {navItems.map((item) => (
@@ -79,7 +77,7 @@ export const Navbar = (props) => {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar component="nav">
-          <Toolbar>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -89,14 +87,13 @@ export const Navbar = (props) => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="h6"
+            <Box
               component={Link}
               to="/"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+              sx={{ display: { xs: 'none', sm: 'flex' }, height: "100%", alignItems: "center" }}
             >
-            <img sx={{my: 2}} src={logo} alt='logo' className='h-12 max-[600px]:hidden'/>
-            </Typography>
+            <img sx={{my: 2}} src={logo} alt='logo' className='h-12 object-contain'/>
+            </Box>
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: "center" }}>
               {navItems.map((item) => (
                 <Button key={item} component={Link} to={`/${item.toLowerCase()}`} sx={{ color: 'black' }}>
