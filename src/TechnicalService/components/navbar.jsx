@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
 import { useDispatch } from 'react-redux';
 import { startLogout } from '../../store/auth/thunks';
+import { useAuthStatus } from '../../hooks/useAuthStatus';
 
 const drawerWidth = 240;
 const navItems = ['About', 'Service', 'Contact'];
@@ -26,6 +27,8 @@ const navItems = ['About', 'Service', 'Contact'];
 export const Navbar = (props) => {
 
   const dispatch = useDispatch();
+
+    const {displayName} = useAuthStatus();
 
   const onLogout = () => {
     dispatch(startLogout());
@@ -49,6 +52,11 @@ export const Navbar = (props) => {
         <Box component={Link} to="/" onClick={handleNavClick} sx={{display: "inline-block", mb: 1}}>
           <img src={logo} className='h-10' alt="logo"/>
         </Box>
+
+        { displayName && (
+          <Typography variant="body1" sx={{ fontWeight: "500", color: "text.secondary", mb: "1"}}>Hola {displayName}👋</Typography>
+        )}
+
         <Divider />
         <List>
           {navItems.map((item) => (

@@ -19,26 +19,11 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { Element } from "react-scroll";
 import { ReviewSlider } from "../components/ReviewSlider";
-import { useEffect, useState } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useAuthStatus } from "../../hooks/useAuthStatus";
 
 export const HomePage = () => {
 
-    const [displayName, setDisplayName] = useState("");
-
-    useEffect(() => {
-        const auth = getAuth();
-
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setDisplayName(user.displayName || user.email || "");
-      } else {
-        setDisplayName("");
-      }
-    });
-
-    return () => unsubscribe();
-    }, []);
+    const {displayName} = useAuthStatus();
 
     return (
         <TechnicalLayout>
