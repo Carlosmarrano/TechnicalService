@@ -5,7 +5,7 @@ import { ScrollTop } from "../components/ScrollTop";
 export const TechnicalLayout = ({children}) => {
 
     return(
-        <Box sx={{display: 'flex', backgroundColor: "secondary.main", minHeight: "100dvh", width: "100%", overflow: "hidden"}}>
+        <Box className="animate__animated animate__fadeIn animate__faster" sx={{display: 'flex', backgroundColor: "secondary.main", minHeight: "100dvh", width: "100%", overflow: "hidden"}}>
 
             <ScrollTop/>
             

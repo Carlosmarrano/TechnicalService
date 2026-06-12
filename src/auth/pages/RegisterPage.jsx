@@ -40,7 +40,7 @@ export const RegisterPage = () => {
 
   return (
     <AuthLayout title='Register'>
-      <form onSubmit={onSubmit}> 
+      <form onSubmit={onSubmit} className="animate__animated animate__fadeIn"> 
         <Grid container component="form" spacing={2}>
           <Grid size={{ xs: 12 }}>
             <TextField label="Nombre completo" type="text" placeholder="John Doe" size="small" fullWidth name="displayName" value={displayName} onChange={onInputChange} error={!!displayNameValid && formSubmitted} helperText={ displayNameValid }/>
