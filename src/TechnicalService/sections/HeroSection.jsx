@@ -1,17 +1,17 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { useAuthStatus } from "../../hooks/useAuthStatus"
+import { useCheckAuth } from "../../hooks/useCheckAuth";
 import { InfoButton } from "../components/Buttons/infoButton";
 import headerImage from "../../../public/header.png";
 
 export const HeroSection = () => {
     
-    const { displayName } = useAuthStatus();
+    const { displayName } = useCheckAuth();
 
     return (
         <Grid container spacing={{ xs: 4, md: 8 }} sx={{ marginTop: { xs: 3, md: 10 }, justifyContent: "center", alignItems: "center" }}>
             <Grid size={{ xs: 12, md: 6 }} sx={{ textAlign: { xs: "center", md: "left" } }}>
                 <Typography variant="h1" sx={{ fontSize: { xs: 26, sm: 40, md: 55 }, fontWeight: 700, lineHeight: 1.3, wordBreak: "break-word" }}>
-                    Hola {displayName}, <br /> En Petu Service, le damos solución a tus problemas en casa
+                    {displayName ? `Hola ${displayName},` : 'Hola, Bienvenido' } <br /> En Petu Service, le damos solución a tus problemas en casa
                 </Typography>
                 <Box sx={{ mt: 3 }}>
                     <InfoButton />
