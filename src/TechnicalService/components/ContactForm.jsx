@@ -65,16 +65,16 @@ export const ContactForm = () => {
 
     return (
         <FormProvider {...methods}>
-            <Grid container sx={{ marginTop: 20, display: "flex", alignItems: "center", flexDirection: "column", gap: 4, marginRight: 10 }}>
-                <Box>
-                    <Typography variant="h2" sx={{ textAlign: "center", fontSize: { xs: 40, sm: 50, lg: 60 } }}>
+            <Box sx={{ marginTop: {xs: 10, md: 15}, display: "flex", width: "100%", maxWidth: 800, mx: "auto" ,flexDirection: "column", gap: 4 }}>
+                <Box sx={{ width: "100%"}}>
+                    <Typography variant="h2" sx={{ textAlign: "center", fontSize: { xs: 36, sm: 50, lg: 60 } }}>
                         Contáctanos
                     </Typography>
                 </Box>
-                <Card sx={{ backgroundColor: "secondary.main", maxWidth: 800, display: "flex", justifyContent: "center", alignContent: "center", boxShadow: 5, mx: "auto" }}>
+                <Card sx={{ backgroundColor: "secondary.main", width: "100%", boxShadow: 5}}>
                     <CardContent>
                         <form onSubmit={methods.handleSubmit(onSubmit)}>
-                            <Grid container spacing={1}>
+                            <Grid container spacing={2}>
                                 <Grid size={{ xs: 12, sm: 6 }}>
                                     <Controller name="Nombre" rules={{ required: "El nombre es obligatorio", maxLength: { value: 50, message: "Máximo 50 caracteres" }, minLength: { value: 3, message: "Nombre demasiado corto" } }} render={({ field, fieldState: { error } }) => (<TextField {...field} label="Nombre Completo" placeholder="Pedro Manuel" variant="outlined" fullWidth error={!!error} helperText={error ? error.message : null} />)} />
                                 </Grid>
@@ -99,7 +99,7 @@ export const ContactForm = () => {
                         {snackbar.message}
                     </Alert>
                 </Snackbar>
-            </Grid>
+            </Box>
         </FormProvider>
     )
 }
