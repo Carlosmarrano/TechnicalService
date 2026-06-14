@@ -30,10 +30,10 @@ const FOOTER_LINKS = [
     {
         title: "Company",
         links: [
-            { label: "About", herf: "#" },
-            { label: "Press", herf: "#" },
-            { label: "Career", herf: "#" },
-            { label: "Contact", herf: "#" },
+            { label: "About", href: "#" },
+            { label: "Press", href: "#" },
+            { label: "Career", href: "#" },
+            { label: "Contact", href: "#" },
         ],
     },
 
@@ -44,6 +44,33 @@ const LEGAL_LINKS = [
     { label: "Privacy", href: "#" },
     { label: "Security", href: "#" },
     { label: "Cookie Declaration", href: "#" },
+]
+
+const SOCIAL_LINKS = [
+    {
+        href: "https://facebook.com",
+        label: "facebook",
+        Icon: FacebookIcon,
+        sx: {background: "white", color: "#4267B2", borderRadius: "50%"}
+    },
+    {
+        href: "https://instagram.com",
+        label: "Instagram",
+        Icon: InstagramIcon,
+        sx: {background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)", color: "white", borderRadius: 1 }
+    },
+    {
+        href: "https://youtube.com",
+        label: "YouTube",
+        Icon: YouTubeIcon,
+        sx: {color: "#FF0000"}
+    },
+    {
+        href: "https://x.com",
+        label: "Twitter (X)",
+        Icon: XIcon,
+        sx: {color: "#000000"}
+    }
 ]
 
 export const FooterSection = () => {
@@ -69,18 +96,12 @@ export const FooterSection = () => {
                                 Coming soon on
                             </Typography>
                             <Stack direction="row" spacing={2}>
-                                <Link href="#" target="_blank" rel="noopener" aria-label="Facebook" sx={{ background: "white", color: "#4267B2", borderRadius: 3 }}>
-                                    <FacebookIcon />
-                                </Link>
-                                <Link href="#" target="_blank" rel="noopener" aria-label="Instagram" sx={{ background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)", color: "white", borderRadius: 3 }}>
-                                    <InstagramIcon />
-                                </Link>
-                                <Link href="#" target="_blank" rel="noopener" aria-label="Twitter (X)" sx={{ color: "black" }}>
-                                    <XIcon />
-                                </Link>
-                                <Link href="#" target="_blank" rel="noopener" aria-label="YouTube" sx={{ color: "#FF1A47" }}>
-                                    <YouTubeIcon />
-                                </Link>
+                                {SOCIAL_LINKS.map((social, index) => {
+                                    const IconComponent = social.Icon;
+                                    return(
+                                        <Link key={index} href={social.href} target="_blank" rel="noopener" arial-label={social.label} sx={{display: "flex", alignItems: "center"}}>{<IconComponent sx={{ fontSize: 20, ...social.sx}}/>}</Link>
+                                    )
+                                })}
                             </Stack>
                         </Stack>
                     </Grid>
@@ -93,7 +114,7 @@ export const FooterSection = () => {
 
                     <Stack direction="row" spacing={3} sx={{ flexWrap: "wrap", justifyContent: { xs: "flex-start", lg: "flex-end" } }} >
                         {LEGAL_LINKS.map((link, index) => (
-                            <Link key={index} href={link.href} underline="hover" sx={{color: "black"}}>{link.label}</Link>
+                            <Link key={index} href={link.href} underline="hover" sx={{ color: "black" }}>{link.label}</Link>
                         ))}
                     </Stack>
                 </Box>
