@@ -11,7 +11,7 @@ export const AboutSection = () => {
             <Grid container spacing={3} sx={{ justifyContent: "center" }}>
                 <Grid size={{ xs: 12, md: 8 }}>
                     <Box sx={{ border: "1px solid secondary.main", boxShadow: 3, padding: { xs: 3, md: 4 }, borderRadius: 2, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-                        <Typography variant="h5">Peito Service</Typography>
+                        <Typography variant="h5" component="h3">Peito Service</Typography>
                         <Typography variant="body2">Peito Services, es una empresa creada para optimizar una inversión segura en su hogar, ofreciendo servicios de reparación, repuestos y una especialización técnica responsable y eficaz. Ustedes nos indican el problema..y Services le da la solución.</Typography>
                     </Box>
                 </Grid>

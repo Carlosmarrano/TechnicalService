@@ -82,7 +82,7 @@ export const FooterSection = () => {
                     {FOOTER_LINKS.map((column, index) => (
                         <Grid key={index} size={{ xs: 12, sm: 6, md: 2.4 }}>
                             <Stack spacing={1.5}>
-                                <Typography variant="h6" sx={{ color: "black", fontWeight: 600 }}>{column.title}</Typography>
+                                <Typography variant="h6" component="h3" sx={{ color: "black", fontWeight: 600 }}>{column.title}</Typography>
                                 {column.links.map((link, linkIndex) => (
                                     <Link key={linkIndex} href={link.href} underline="hover" sx={{ color: "black" }}>{link.label}</Link>
                                 ))}
@@ -92,14 +92,14 @@ export const FooterSection = () => {
 
                     <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                         <Stack spacing={2}>
-                            <Typography variant="h6" sx={{ color: "black" }}>
+                            <Typography variant="h6" component="h3" sx={{ color: "black" }}>
                                 Coming soon on
                             </Typography>
                             <Stack direction="row" spacing={2}>
                                 {SOCIAL_LINKS.map((social, index) => {
                                     const IconComponent = social.Icon;
                                     return(
-                                        <Link key={index} href={social.href} target="_blank" rel="noopener" arial-label={social.label} sx={{display: "flex", alignItems: "center"}}>{<IconComponent sx={{ fontSize: 20, ...social.sx}}/>}</Link>
+                                        <Link key={index} href={social.href} target="_blank" rel="noopener" aria-label={social.label} sx={{display: "flex", alignItems: "center"}}>{<IconComponent sx={{ fontSize: 20, ...social.sx}}/>}</Link>
                                     )
                                 })}
                             </Stack>

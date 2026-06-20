@@ -33,7 +33,7 @@ export const ReviewSlider = () => {
     return (
         <Box sx={{ marginTop: {xs: 10, md: 15}, display: "flex", alignItems: "center",justifyContent: "center" ,flexDirection: "row", width: "100%", maxWidth: 1200, mx: "auto", pb: {xs: 6, md: 4} }}>
 
-            <IconButton onClick={() => handleStep("prev")} disabled={!checked} sx={{zIndex: 2}} >
+            <IconButton onClick={() => handleStep("prev")} disabled={!checked} sx={{zIndex: 2}} aria-label="Anterior reseña" >
                 <ArrowBackIosNew/>
             </IconButton>
 
@@ -58,7 +58,7 @@ export const ReviewSlider = () => {
                 </Fade>
             </Box>
 
-            <IconButton onClick={() => handleStep("next")} disabled={!checked} sx={{zIndex: 2}}>
+            <IconButton onClick={() => handleStep("next")} disabled={!checked} sx={{zIndex: 2}} aria-label="Siguiente reseña">
                 <ArrowForwardIosIcon/>
             </IconButton>
 
