@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { useCheckAuth } from "../../hooks/useCheckAuth";
 import { InfoButton } from "../components/Buttons/infoButton";
-import headerImage from "../../../public/header.png";
+import headerImage from "../../../public/header.webp";
 
 export const HeroSection = () => {
     

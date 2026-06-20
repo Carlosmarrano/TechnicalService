@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material"
-import NotFoundPage from "../../../public/404.png";
+import NotFoundPage from "../../../public/404.webp";
 import { HomeButton } from "../components/Buttons/homeButton";
 
 export const PageNotFound = () => {
