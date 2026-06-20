@@ -39,7 +39,7 @@ export const ServicesPage = () => {
                         <Grid key={index} size={{xs: 12, sm: 6, md: 4}} sx={{display: "flex"}}>
                             <Box sx={{width: "100%", border: "1px solid", borderColor: "divider", boxShadow: 4, padding: {xs: 3, md: 4}, borderRadius: 3, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, backgroundColor: "Background.paper", transition: "transform 0.2s, box-shadow 0.2s", "&:hover": {transform: "translateY(-4px)", boxShadow: 6}}}>
                                 {service.icon}
-                                <Typography variant="h5" sx={{fontWeight: 600}}>{service.title}</Typography>
+                                <Typography variant="h5" component="h2" sx={{fontWeight: 600}}>{service.title}</Typography>
                                 <Typography variant="body2" sx={{color: "text.secondary", lineHeight: 1.6}}>{service.desc}</Typography>
                             </Box>
                         </Grid>

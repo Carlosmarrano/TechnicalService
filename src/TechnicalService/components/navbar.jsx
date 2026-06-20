@@ -50,7 +50,7 @@ export const Navbar = (props) => {
     const drawer = (
       <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
         <Box component={Link} to="/" onClick={handleNavClick} sx={{display: "inline-block", mb: 1}}>
-          <img src={logo} className='h-10' alt="logo"/>
+          <Box component="img" src={logo} alt="Logotipo de Petu Service" width="120" height="48" sx={{ height: 48, width: "auto", objectFit: "contain"}}/>
         </Box>
 
         { displayName && (
@@ -100,7 +100,7 @@ export const Navbar = (props) => {
               to="/"
               sx={{ display: { xs: 'none', sm: 'flex' }, height: "100%", alignItems: "center" }}
             >
-            <img sx={{my: 2}} src={logo} alt='logo' className='h-12 object-contain'/>
+            <Box component="img" src={logo} alt='Logotipo de Petu Service' width="144" height="48" sx={{my: 2, height: 48, width: "auto", objectFit: "contain"}}/>
             </Box>
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: "center" }}>
               {navItems.map((item) => (

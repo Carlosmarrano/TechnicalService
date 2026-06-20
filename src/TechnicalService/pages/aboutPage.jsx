@@ -17,7 +17,7 @@ export const AboutPage = () => {
 
                     <Box sx={{width: "100%", maxWidth: {xs: "100%", md: 720, lg: 850}, display: "flex", justifyContent: "center" }}>
                         <Box sx={{ width: "100%", border: "1px solid", borderColor: "divider" ,boxShadow: 4, padding: {xs: 3,sm: 4, md: 5}, borderRadius: 4, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
-                            <Typography variant="h4" sx={{fontWeight: 600, color: "text.primary", fontSize: {xs: "1.5rem", md: "2rem"}}}>Peito Service</Typography>
+                            <Typography variant="h4" component="h2" sx={{fontWeight: 600, color: "text.primary", fontSize: {xs: "1.5rem", md: "2rem"}}}>Peito Service</Typography>
 
                             <Typography variant="body1" sx={{color: "text.secondary", lineHeight: 1.7, fontSize: {xs: 15, md:16}}}>Peito Services una empresa creada en 1984, cuyo fundamento principal, es impulsar el servicio técnico a otro nivel, optimizando de manerq eficaz, rápida y segura, las soluciones técnicas del hogar, ofreciendo personal cualuficado y con una alta experiencua, que faciliten de modo operativo, responsable, la confianza, de ud como cliente al elegir nuestros servicios.</Typography>
 

@@ -18,7 +18,7 @@ export const HeroSection = () => {
                 </Box>
             </Grid>
             <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex", justifyContent: "center" }}>
-                <Box component="img" src={headerImage} alt="headerImage" sx={{ width: "100%", maxWidth: { xs: 280, sm: 350, md: 400 }, height: "auto", maskImage: 'linear-gradient(black 80%, transparent)' }} />
+                <Box component="img" src={headerImage} alt="Técnico de Petu Service" fetchPriority="high" loading="eager" width="421" height="592" sx={{ width: "100%", maxWidth: { xs: 280, sm: 350, md: 400 }, height: "auto", maskImage: 'linear-gradient(black 80%, transparent)' }} />
             </Grid>
         </Grid>
     )
